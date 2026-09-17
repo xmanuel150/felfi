@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MELFI S.A.C. | Socios Mototaxistas</title>
+
+    <meta name="description"
+        content="MELFI S.A.C. - Únete como socio mototaxista en Mala y trabaja con tu propia mototaxi. Información sobre AFOCAT.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0b1724;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: #f5c400;
+            color: #0b1724;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo h2 {
+            font-size: 22px;
+        }
+
+        .logo span {
+            color: #f5c400;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #f5c400;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg,
+                    rgba(5, 15, 25, 0.95) 0%,
+                    rgba(5, 15, 25, 0.80) 45%,
+                    rgba(5, 15, 25, 0.35) 100%),
+                url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85") center/cover;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 60px 25px;
+            color: white;
+        }
+
+        .hero h1 {
+            max-width: 750px;
+            font-size: clamp(40px, 6vw, 70px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #f5c400;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 21px;
+            margin-bottom: 35px;
+            color: #f0f0f0;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #f5c400;
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            background: #ffd92e;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #20c763;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #18ad54;
+            transform: translateY(-2px);
+        }
+
+        .btn-dark {
+            background: #0b1724;
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background: #162b3f;
+        }
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
+        section {
+            padding: 80px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #0b1724;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* =========================
+           SOCIOS
+        ========================= */
+
+        .socios {
+            background: white;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #f7f9fb;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e5e8eb;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #f5c400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: #0b1724;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            background: #f5c400;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            color: #0b1724;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+
+        /* =========================
+           AFOCAT
+        ========================= */
+
+        .afocat {
+            background: #0b1724;
+            color: white;
+        }
+
+        .afocat-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .afocat h2 {
+            font-size: 42px;
+            color: #f5c400;
+            margin-bottom: 20px;
+        }
+
+        .afocat p {
+            color: #dce3e8;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .afocat-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .afocat-list li {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+
+        .afocat-list li::before {
+            content: "✓";
+            color: #f5c400;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .afocat-card {
+            background: white;
+            color: #222;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .afocat-card h3 {
+            font-size: 27px;
+            color: #0b1724;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-box {
+            padding: 35px;
+            border-radius: 15px;
+            background: #f7f9fb;
+            border: 1px solid #e5e8eb;
+        }
+
+        .contact-box h3 {
+            color: #0b1724;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .contact-item strong {
+            color: #0b1724;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #07111b;
+            color: #bbb;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer strong {
+            color: #f5c400;
+        }
+
+        /* =========================
+           WHATSAPP FLOTANTE
+        ========================= */
+
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 62px;
+            height: 62px;
+            background: #20c763;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            z-index: 2000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background: #18ad54;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .afocat-box {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .cta h2 {
+                font-size: 32px;
+            }
+
+            .afocat h2 {
+                font-size: 34px;
+            }
+
+            /* =========================================
+   NAVBAR RESPONSIVE
+========================================= */
+
+            .navbar {
+                max-width: 1200px;
+                margin: auto;
+                padding: 12px 25px;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                position: relative;
+            }
+
+            /* LOGO */
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                color: white;
+                text-decoration: none;
+            }
+
+            .logo-icon {
+                flex-shrink: 0;
+            }
+
+            .logo h2 {
+                margin: 0;
+            }
+
+            .logo small {
+                display: block;
+                color: #c8d0d7;
+            }
+
+
+            /* MENÚ */
+
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            nav a:hover {
+                color: #f5c400;
+            }
+
+
+            /* BOTÓN HAMBURGUESA */
+
+            .menu-toggle {
+                display: none;
+
+                width: 45px;
+                height: 42px;
+
+                border: none;
+                border-radius: 7px;
+
+                background: #f5c400;
+
+                cursor: pointer;
+
+                padding: 8px;
+            }
+
+            .menu-toggle span {
+                display: block;
+
+                width: 100%;
+                height: 3px;
+
+                margin: 5px 0;
+
+                background: #0b1724;
+
+                border-radius: 5px;
+
+                transition: 0.3s;
+            }
+
+
+            /* BOTÓN WHATSAPP DEL MENÚ */
+
+            .menu-whatsapp {
+                background: #20c763;
+                padding: 9px 15px;
+                border-radius: 6px;
+            }
+
+            .menu-whatsapp:hover {
+                color: white !important;
+                background: #18ad54;
+            }
+
+
+            /* =========================================
+   TABLET / CELULAR
+========================================= */
+
+            @media (max-width: 800px) {
+
+                .navbar {
+                    padding: 12px 20px;
+                }
+
+
+                /* MOSTRAR HAMBURGUESA */
+
+                .menu-toggle {
+                    display: block;
+                    position: relative;
+                    z-index: 1100;
+                }
+
+
+                /* MENÚ DESPLEGABLE */
+
+                nav {
+                    position: absolute;
+
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+
+                    width: 100%;
+
+                    background: #0b1724;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    align-items: stretch;
+
+                    gap: 0;
+
+                    padding: 10px 20px 20px;
+
+                    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+
+                    /* Oculto inicialmente */
+                    visibility: hidden;
+                    opacity: 0;
+
+                    transform: translateY(-10px);
+
+                    transition:
+                        opacity 0.25s ease,
+                        transform 0.25s ease,
+                        visibility 0.25s ease;
+                }
+
+
+                /* MENÚ ABIERTO */
+
+                nav.active {
+                    visibility: visible;
+                    opacity: 1;
+
+                    transform: translateY(0);
+                }
+
+
+                nav a {
+                    display: block;
+
+                    width: 100%;
+
+                    padding: 15px 10px;
+
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                }
+
+
+                .menu-whatsapp {
+                    margin-top: 10px;
+
+                    text-align: center;
+
+                    border: none;
+                }
+
+
+                /* ANIMACIÓN HAMBURGUESA */
+
+                .menu-toggle.active span:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg);
+                }
+
+                .menu-toggle.active span:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .menu-toggle.active span:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+     HEADER RESPONSIVE
+========================= -->
+
+    <header>
+        <div class="navbar">
+
+            <!-- LOGO -->
+            <a href="#inicio" class="logo">
+
+                <div class="logo-icon">M</div>
+
+                <div>
+                    <h2>MELFI <span>S.A.C.</span></h2>
+                    <small>Transporte en Mala</small>
+                </div>
+
+            </a>
+
+
+            <!-- BOTÓN HAMBURGUESA -->
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menú"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- MENÚ -->
+            <nav id="mainMenu">
+
+                <a href="#inicio">Inicio</a>
+                <a href="#socios">Socios</a>
+                <a href="#afocat">AFOCAT</a>
+                <a href="#contacto">Contacto</a>
+
+                <a
+                    class="menu-whatsapp"
+                    href="https://wa.me/51991789744?text=Hola%20MELFI%20S.A.C.%2C%20quiero%20información.">
+
+                    WhatsApp
+
+                </a>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <h1>
+                ¡Únete a
+                <span>MELFI S.A.C.</span>
+                como socio!
+            </h1>
+
+            <p>
+                Si tienes tu propia mototaxi, puedes solicitar información
+                para formar parte de nuestra empresa y trabajar como socio.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn btn-primary"
+                    href="https://wa.me/51991789744?text=Hola%20MELFI%20S.A.C.%2C%20quiero%20información%20para%20ser%20socio%20mototaxista.">
+                    🛺 Quiero ser socio
+                </a>
+
+                <a class="btn btn-whatsapp"
+                    href="https://wa.me/51991789744?text=Hola%20MELFI%20S.A.C.%2C%20quiero%20información%20sobre%20AFOCAT.">
+                    🛡️ Consultar AFOCAT
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOCIOS
+    ========================== -->
+
+    <section class="socios" id="socios">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Forma parte de MELFI S.A.C.</h2>
+
+                <p>
+                    Una propuesta dirigida a mototaxistas que desean
+                    incorporarse como socios y trabajar con su propia unidad.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-icon">🛺</div>
+
+                    <h3>Tu propia mototaxi</h3>
+
+                    <p>
+                        Puedes trabajar utilizando tu propia mototaxi,
+                        de acuerdo con las condiciones y requisitos
+                        correspondientes.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">🤝</div>
+
+                    <h3>Hazte socio</h3>
+
+                    <p>
+                        Solicita información sobre el proceso para
+                        formar parte de MELFI S.A.C. como socio.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">📋</div>
+
+                    <h3>Información clara</h3>
+
+                    <p>
+                        Nuestro equipo puede orientarte sobre los
+                        requisitos y documentación necesarios.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LLAMADO A LA ACCIÓN
+    ========================== -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>¿Tienes una mototaxi?</h2>
+
+            <p>
+                Comunícate con MELFI S.A.C. y solicita información
+                para incorporarte como socio.
+            </p>
+
+            <a class="btn btn-dark"
+                href="https://wa.me/51991789744?text=Hola%20MELFI%20S.A.C.%2C%20tengo%20una%20mototaxi%20y%20quiero%20ser%20socio.">
+                💬 Quiero información
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         AFOCAT
+    ========================== -->
+
+    <section class="afocat" id="afocat">
+
+        <div class="container">
+
+            <div class="afocat-box">
+
+                <div>
+
+                    <h2>AFOCAT</h2>
+
+                    <p>
+                        Consulta con nosotros sobre el servicio AFOCAT
+                        relacionado con accidentes de tránsito.
+                    </p>
+
+                    <ul class="afocat-list">
+                        <li>Información sobre afiliación</li>
+                        <li>Consulta de requisitos</li>
+                        <li>Orientación sobre documentación</li>
+                        <li>Atención directa por WhatsApp</li>
+                    </ul>
+
+                    <a class="btn btn-whatsapp"
+                        href="https://wa.me/51991789744?text=Hola%20MELFI%20S.A.C.%2C%20quiero%20consultar%20sobre%20AFOCAT.">
+                        🛡️ Consultar por AFOCAT
+                    </a>
+
+                </div>
+
+
+                <div class="afocat-card">
+
+                    <h3>¿Necesitas información?</h3>
+
+                    <p>
+                        Comunícate con MELFI S.A.C. para conocer
+                        las condiciones, requisitos, costos y documentación
+                        correspondiente.
+                    </p>
+
+                    <br>
+
+                    <strong>
+                        📱 WhatsApp: 991 789 744
+                    </strong>
+
+                    <br><br>
+
+                    <a class="btn btn-dark"
+                        href="https://wa.me/51991789744?text=Hola%20MELFI%20S.A.C.%2C%20necesito%20información%20sobre%20AFOCAT.">
+                        Hablar por WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+
+    <section class="contact" id="contacto">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Contáctanos</h2>
+
+                <p>
+                    Estamos listos para atender tus consultas.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <div class="contact-box">
+
+                    <h3>📍 MELFI S.A.C.</h3>
+
+                    <div class="contact-item">
+                        <strong>Ubicación:</strong>
+                        Mala, Lima
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>WhatsApp:</strong>
+                        991 789 744
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>Servicios:</strong>
+                        Incorporación de socios mototaxistas y
+                        atención relacionada con AFOCAT.
+                    </div>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <h3>💬 Escríbenos</h3>
+
+                    <p>
+                        ¿Quieres ser socio? ¿Necesitas información
+                        sobre AFOCAT?
+                    </p>
+
+                    <br>
+
+                    <a class="btn btn-whatsapp"
+                        href="https://wa.me/51991789744?text=Hola%20MELFI%20S.A.C.%2C%20quiero%20información.">
+                        Abrir WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>MELFI S.A.C.</strong> |
+            Todos los derechos reservados.
+        </p>
+
+        <p>
+            Mala, Lima — Perú
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         WHATSAPP FLOTANTE
+    ========================== -->
+
+    <a class="whatsapp-float"
+        href="https://wa.me/51991789744?text=Hola%20MELFI%20S.A.C.%2C%20quiero%20información."
+        aria-label="Contactar por WhatsApp"
+        title="Contactar por WhatsApp">
+
+        ☎
+
+    </a>
+ <script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mainMenu = document.getElementById("mainMenu");
+
+    // Abrir / cerrar menú
+    menuToggle.addEventListener("click", function () {
+
+        mainMenu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+
+        const abierto = mainMenu.classList.contains("active");
+
+        menuToggle.setAttribute("aria-expanded", abierto);
+
+    });
+
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll("#mainMenu a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            mainMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+        });
+
+    });
+
+
+    // Cerrar menú al cambiar a pantalla grande
+    window.addEventListener("resize", function() {
+
+        if (window.innerWidth > 800) {
+
+            mainMenu.classList.remove("active");
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+        }
+
+    });
+
+</script>
+</body>
+
+</html>
